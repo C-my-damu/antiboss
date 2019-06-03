@@ -321,10 +321,10 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Red;
-            this.button5.Location = new System.Drawing.Point(734, 13);
+            this.button5.Location = new System.Drawing.Point(723, 13);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(37, 33);
+            this.button5.Size = new System.Drawing.Size(48, 33);
             this.button5.TabIndex = 22;
             this.button5.Text = "X";
             this.button5.UseVisualStyleBackColor = false;
@@ -333,10 +333,10 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button6.Location = new System.Drawing.Point(687, 13);
+            this.button6.Location = new System.Drawing.Point(670, 13);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(39, 33);
+            this.button6.Size = new System.Drawing.Size(45, 33);
             this.button6.TabIndex = 23;
             this.button6.Text = "—";
             this.button6.UseVisualStyleBackColor = false;
@@ -345,11 +345,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微软雅黑", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.Location = new System.Drawing.Point(16, 11);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 27);
+            this.label8.Size = new System.Drawing.Size(105, 28);
             this.label8.TabIndex = 24;
             this.label8.Text = "AntiBoss";
             // 

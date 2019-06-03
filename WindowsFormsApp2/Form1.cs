@@ -30,12 +30,12 @@ namespace WindowsFormsApp2
         bool drawable = false;
         bool isrun = false;
         int t = 0;
-        double zoom = 1;
+        double zoom = 1;//摄像头分辨率/窗口控件分辨率
         int selectface = 0;
         bool flag_cam = false;//相机标签
         string selectedprocess = "";
-        int ttimer2 = 0;
-        int ttime2 = 0;
+        int ttimer2 = 0;//timer2已过秒数
+        int ttime2 = 0;//timer2设定描述
         Rectangle[] rectangles = new Rectangle[10];
         String[] whitelist = new string[20];//白名单
         bool inWhitelist = false;
@@ -465,23 +465,23 @@ namespace WindowsFormsApp2
 
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
+        //private void button4_Click_1(object sender, EventArgs e)
+        //{
+        //    OpenFileDialog dialog = new OpenFileDialog();
 
-            dialog.Filter = "程序(*.exe)|*.exe";
-            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                filep = dialog.FileName;
-            }
+        //    dialog.Filter = "程序(*.exe)|*.exe";
+        //    if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        //    {
+        //        filep = dialog.FileName;
+        //    }
 
-            comboBox1.Items.Clear();
-            Process[] list = Process.GetProcesses();
-            foreach (var item in list)
-            {
-                comboBox1.Items.Add(item.ProcessName);
-            }
-        }
+        //    comboBox1.Items.Clear();
+        //    Process[] list = Process.GetProcesses();
+        //    foreach (var item in list)
+        //    {
+        //        comboBox1.Items.Add(item.ProcessName);
+        //    }
+        //}
 
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -492,6 +492,7 @@ namespace WindowsFormsApp2
             }
             else
             {
+                ttimer2 = 0;
                 timer1.Enabled = true;
                 timer1.Start();
                 System.Console.WriteLine("1:" + timer1.Enabled.ToString());
@@ -630,7 +631,7 @@ namespace WindowsFormsApp2
 
             }
             label1.BeginInvoke(new Action(() => { label1.Text = "1"; }));
-            if (timer2.Interval > 100)
+            if (ttime2 > 100)
             {
                 this.Invoke(new Action(() => { timer2.Enabled = true; timer2.Start(); }));
                 timer2.Enabled = true;
