@@ -60,7 +60,7 @@
             // 
             // videoSourcePlayer1
             // 
-            this.videoSourcePlayer1.BackColor = System.Drawing.Color.Black;
+            this.videoSourcePlayer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.videoSourcePlayer1.BorderColor = System.Drawing.Color.White;
             this.videoSourcePlayer1.Location = new System.Drawing.Point(17, 59);
             this.videoSourcePlayer1.Margin = new System.Windows.Forms.Padding(4);
@@ -359,10 +359,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(791, 554);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.videoSourcePlayer1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.videoSourcePlayer1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.checkBox2);
@@ -372,7 +373,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);

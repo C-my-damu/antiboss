@@ -44,7 +44,6 @@ namespace WindowsFormsApp2
 
         [DllImport("user32.dll")]
         public static extern void SwitchToThisWindow(IntPtr hWnd, bool fAltTab);
-
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         [DllImport("user32.dll")]        
@@ -120,11 +119,19 @@ namespace WindowsFormsApp2
 
             videoSource.VideoResolution = videoSource.VideoCapabilities[maxindex];
             //在videoSourcePlayer1里显示
-            zoom = (double)(319.0 / videoSource.VideoCapabilities[maxindex].FrameSize.Height);
-            videoSourcePlayer1.Width =(int)(videoSource.VideoCapabilities[maxindex].FrameSize.Width * (double)(319.0 / videoSource.VideoCapabilities[maxindex].FrameSize.Height));
+            zoom = (double)(((double)videoSourcePlayer1.Height) / videoSource.VideoCapabilities[maxindex].FrameSize.Height);
+            videoSourcePlayer1.Width =(int)(videoSource.VideoCapabilities[maxindex].FrameSize.Width * zoom);
             videoSourcePlayer1.VideoSource = videoSource;
-            videoSourcePlayer1.Start();
+            try
+            {
+                videoSourcePlayer1.Start();
+            }
+            catch (Exception e)
+            {
 
+                System.Console.WriteLine(e.ToString());
+            }
+           
         }
         private void closeCam()//关闭摄像头
         {
@@ -146,15 +153,16 @@ namespace WindowsFormsApp2
             Process[] list = Process.GetProcesses();
             foreach (var item in list)
             {
-                if (item.MainWindowTitle != "")
+                if (item.MainWindowTitle != ""&&!comboBox1.Items.Contains(item.MainWindowTitle))
                 {
                     try
                     {
                         comboBox1.Items.Add(item.MainWindowTitle);
                         processlist.Add(item.MainWindowTitle, item.Id);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+                        System.Console.WriteLine(ex.ToString());
                     }
                 }                
             }
